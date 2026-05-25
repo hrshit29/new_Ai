@@ -78,7 +78,7 @@ DO NOT wrap the response in markdown code blocks like \`\`\`json. Just output th
     // Attempt to parse the JSON
     let parsedPaper;
     try {
-      parsedPaper = JSON.parse(resultText);
+       parsedPaper = JSON.parse(resultText || "{}");
     } catch (parseError) {
       console.error("Failed to parse Gemini response as JSON:", resultText);
       return NextResponse.json(
